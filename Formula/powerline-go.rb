@@ -1,7 +1,7 @@
 class PowerlineGo < Formula
   version '1.12.1'
   homepage 'https://github.com/justjanne/powerline-go'
-  url "https://github.com/justjanne/powerline-go/releases/download/v1.12.1/powerline-go-darwin-amd64"
+  url "https://github.com/justjanne/powerline-go/releases/download/v#{version}/powerline-go-darwin-amd64"
   sha256 '6353bb30a4ac79a433e489eb112fb0db926c2ebeeed4ebe43adc018e58460928'
   head 'https://github.com/justjanne/powerline-go.git'
 
@@ -11,8 +11,17 @@ class PowerlineGo < Formula
 
   def install
     if build.head?
-      system 'make', 'build'
+      gobin = buildpath/"bin"
+      ENV.update({
+        'GOPATH' => buildpath,
+        'PATH'   => "#{gobin}:#{ENV['PATH']}",
+      })
+      mkdir_p buildpath/'src/github.com/justjanne'
+      ln_s buildpath, buildpath/"src/github.com/justjanne/#{name}"
+      system 'go', 'get', '-d', '-v', './...'
+      system 'go', 'build', "./cmd/#{name}"
     end
-    bin.install 'powerline-go'
+
+    bin.install name
   end
 end
