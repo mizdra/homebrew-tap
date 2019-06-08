@@ -6,6 +6,7 @@ class PowerlineGo < Formula
   head 'https://github.com/justjanne/powerline-go.git'
 
   head do
+    url "https://github.com/justjanne/#{name}.git"
     depends_on 'go' => :build
   end
 
@@ -19,7 +20,7 @@ class PowerlineGo < Formula
       mkdir_p buildpath/'src/github.com/justjanne'
       ln_s buildpath, buildpath/"src/github.com/justjanne/#{name}"
       system 'go', 'get', '-d', '-v', './...'
-      system 'go', 'build', "./cmd/#{name}"
+      system 'go', 'build', "-o", "#{name}"
     end
 
     bin.install name
