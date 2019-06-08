@@ -1,4 +1,5 @@
 class PowerlineGo < Formula
+  name = 'powerline-go'
   version '1.12.1'
   homepage 'https://github.com/justjanne/powerline-go'
   url "https://github.com/justjanne/powerline-go/releases/download/v#{version}/powerline-go-darwin-amd64"
