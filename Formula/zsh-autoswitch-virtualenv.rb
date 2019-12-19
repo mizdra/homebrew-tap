@@ -1,4 +1,4 @@
-class ZshAutoSwitchVirtualenv < Formula
+class ZshAutoswitchVirtualenv < Formula
   name = 'zsh-autoswitch-virtualenv'
   version '1.15.0'
   homepage 'https://github.com/MichaelAquilina/zsh-autoswitch-virtualenv'
