@@ -13,8 +13,8 @@ class MagicTrackpadSwitcher < Formula
   service do
     run [opt_bin/"magic-trackpad-switcher"]
     keep_alive true
-    error_path "#{HOMEBREW_PREFIX}/var/log/beanstalkd.error.log"
     log_path "#{HOMEBREW_PREFIX}/var/log/beanstalkd.log"
+    error_log_path "#{HOMEBREW_PREFIX}/var/log/beanstalkd.error.log"
   end
 
   test do
