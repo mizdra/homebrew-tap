@@ -13,6 +13,8 @@ class MagicTrackpadSwitcher < Formula
   service do
     run [opt_bin/"magic-trackpad-switcher"]
     keep_alive true
+    run_type :interval
+    interval 10
     log_path "#{HOMEBREW_PREFIX}/var/log/magic-trackpad-switcher.log"
     error_log_path "#{HOMEBREW_PREFIX}/var/log/magic-trackpad-switcher.error.log"
   end
