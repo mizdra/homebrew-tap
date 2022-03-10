@@ -17,6 +17,7 @@ class MagicTrackpadSwitcher < Formula
     interval 10
     log_path "#{HOMEBREW_PREFIX}/var/log/magic-trackpad-switcher.log"
     error_log_path "#{HOMEBREW_PREFIX}/var/log/magic-trackpad-switcher.error.log"
+    environment_variables PATH: std_service_path_env
   end
 
   test do
