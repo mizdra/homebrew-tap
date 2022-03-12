@@ -1,8 +1,8 @@
 class MagicTrackpadSwitcher < Formula
   desc "The tool to switch Magic Trackpad connections between multiple Mac devices"
   homepage "https://github.com/mizdra/magic-trackpad-switcher"
-  url "https://github.com/mizdra/magic-trackpad-switcher/releases/download/v0.1.1/magic-trackpad-switcher"
-  sha256 "1697ead1b2cdc63adcb6da4f69219089ee5cc93f42b39d6194deeb885b042d6e"
+  url "https://github.com/mizdra/magic-trackpad-switcher/releases/download/v0.1.4/magic-trackpad-switcher"
+  sha256 "c651b6ad9f16f475e3b42a81516de124c934ae49038f1490f6edd3870cbc0f41"
 
   depends_on "blueutil"
 
